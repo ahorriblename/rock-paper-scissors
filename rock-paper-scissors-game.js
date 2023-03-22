@@ -18,7 +18,7 @@ function playRound(playerSelection, computerSelection) {
       break;
   
     case playerSelection === 'rock' && computerSelection === 'Scissors':
-      console.log('You won! Scissors beats rock!');
+      console.log('You won! Rock beats scissors!');
       break;
 
     case playerSelection === 'paper' && computerSelection === 'Paper':
