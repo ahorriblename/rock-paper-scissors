@@ -50,6 +50,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game()
-  for(let round = 1; round > 5; round++) {
+  for(let round = 1; round < 5; round++) {
     playRound();
 }
