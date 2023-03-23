@@ -67,15 +67,15 @@ function game() {
   for (let round = 0; round < 5; round++) {
     playRound();
     
-    if (playerWin == true) {
+    if (playerWin === true) {
       playerScore++; 
       console.log('Your score: ' + playerScore);
       console.log('Comp score: ' + compScore);
-    } else if (compWin == true) {
+    } else if (compWin === true) {
       compScore++;
       console.log('Your score: ' + playerScore);
       console.log('Comp score: ' + compScore);
-    } else  if (bothTie == true ){
+    } else  if (bothTie === true ){
       console.log('Your score: ' + playerScore);
       console.log('Comp score: ' + compScore);
     }
