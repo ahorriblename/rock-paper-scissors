@@ -9,6 +9,7 @@ let compWin = false
 let bothTie = false
 
 function playRound(playerSelection, computerSelection) {
+  playerSelection = prompt('Choose rock, paper, or scissors! You get five tries!')
   playerSelection = playerSelection.toLowerCase();
   computerSelection = getComputerChoice();
 
@@ -60,13 +61,11 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-
-
 function game() {
   let playerScore = 0;
   let compScore = 0;
   for (let round = 0; round < 5; round++) {
-    playRound('rock');
+    playRound();
     
     if (playerWin == true) {
       playerScore++; 
