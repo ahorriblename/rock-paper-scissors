@@ -4,10 +4,11 @@ function getComputerChoice() {
   return computerChoice
 }
 
+let playerWin = false
+let compWin = false
+let bothTie = false
+
 function playRound(playerSelection, computerSelection) {
-  let playerWin = false;
-  let compWin = false;
-  let bothTie = false;
   playerSelection = playerSelection.toLowerCase();
   computerSelection = getComputerChoice();
 
@@ -59,6 +60,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+
+
 function game() {
   let playerScore = 0;
   let compScore = 0;
@@ -81,5 +84,12 @@ function game() {
     playerWin = false;
     compWin = false;
     bothTie = false;
+  }
+  if (playerScore > compScore) {
+    return 'You won! You beat the computer'
+  } else if (compScore > playerScore){
+    return 'You lost! The computer beat you!'
+  } else {
+    return 'Draw! Nobody wins! Try again next time!'
   }
 }
