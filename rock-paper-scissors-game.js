@@ -17,47 +17,38 @@ function playRound(playerSelection, computerSelection) {
     case playerSelection === 'rock' && computerSelection === 'Paper':
       console.log( 'You lost! Paper beats rock!');
       return compWin = true
-      break;
 
     case playerSelection === 'rock' && computerSelection === 'Rock':
       console.log( 'Draw! You both picked rock!');
       return bothTie = true
-      break;
   
     case playerSelection === 'rock' && computerSelection === 'Scissors':
       console.log( 'You won! Rock beats scissors!');
       return playerWin = true
-      break;
 
     case playerSelection === 'paper' && computerSelection === 'Paper':
       console.log( 'Draw! You both picked paper!');
       return bothTie = true
-      break;
 
     case playerSelection === 'paper' && computerSelection === 'Rock':
       console.log( 'You won! Paper beats rock!');
       return playerWin = true
-      break;
 
     case playerSelection === 'paper' && computerSelection === 'Scissors':
       console.log( 'You lost! Scissors beats paper!');
       return compWin = true
-      break;
       
     case playerSelection === 'scissors' && computerSelection === 'Paper':
       console.log( 'You won! Scissors beats paper!');
       return playerWin = true
-      break;
 
     case playerSelection === 'scissors' && computerSelection === 'Rock':
       console.log( 'You lost! Rock beats scissors!');
       return compWin = true
-      break;
 
     case playerSelection === 'scissors' && computerSelection === 'Scissors':
       console.log( 'Draw! You both picked scissors!');
       return bothTie = true
-      break;
   }
 }
 
@@ -75,7 +66,7 @@ function game() {
       compScore++;
       console.log('Your score: ' + playerScore);
       console.log('Comp score: ' + compScore);
-    } else  if (bothTie === true ){
+    } else  if (bothTie === true ) {
       console.log('Your score: ' + playerScore);
       console.log('Comp score: ' + compScore);
     }
@@ -84,9 +75,10 @@ function game() {
     compWin = false;
     bothTie = false;
   }
+
   if (playerScore > compScore) {
     return 'You won! You beat the computer'
-  } else if (compScore > playerScore){
+  } else if (compScore > playerScore) {
     return 'You lost! The computer beat you!'
   } else {
     return 'Draw! Nobody wins! Try again next time!'
