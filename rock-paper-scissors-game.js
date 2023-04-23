@@ -9,8 +9,6 @@ let compWin = false
 let bothTie = false
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = prompt('Choose rock, paper, or scissors! You get five tries!')
-  playerSelection = playerSelection.toLowerCase();
   computerSelection = getComputerChoice();
 
   switch (true) {
@@ -84,3 +82,10 @@ function game() {
     return 'Draw! Nobody wins! Try again next time!'
   }
 }
+
+const rock = document.querySelector('#Rock');
+const paper = document.querySelector('#Paper');
+const scissors = document.querySelector('#Scissors');
+rock.addEventListener('click', () => playRound('rock'));
+paper.addEventListener('click', () => playRound('paper'));
+scissors.addEventListener('click', () => playRound('scissors'));
