@@ -7,6 +7,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #E1E1F6;
 }
 
 .score {
@@ -55,8 +56,10 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid;
+  border: 2px double;
   margin-top: auto;
+  border-radius: 25px;
+  background-color: #FAF2F5;
 }
 
 a {
