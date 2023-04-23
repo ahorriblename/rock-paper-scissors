@@ -5,14 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors Game</title>
+  <link rel = "stylesheet" href = "styles.css">
   <script src = './rock-paper-scissors-game.js' defer></script>
 </head>
 
 <body>
+  <div class = score>
+    <p class = score-text>Player Score: 0</p>
+    <p class = score-text>Computer Score: 0</p>
+  </div>
+
   <div class = container>
-    <button id = Rock>Rock</button>
-    <button id = Paper>Paper</button>
-    <button id = Scissors>Scissors</button>
+    <div class = "options">
+      <button id = Rock>Rock</button>
+      <img src = "./images/pexels-peter-döpper-2363901.jpg" alt = "A rock">
+    </div>
+    <div class = "options">
+      <button id = Paper>Paper</button>
+      <img src = "./images/pexels-ron-lach-10526896.jpg" alt = "Wrinkled paper">
+    </div>
+    <div class = "options">
+      <button id = Scissors>Scissors</button>
+      <img src = "./images/pexels-lorencius-stefanus-8125680.jpg" alt = "Scissors">
+    </div>
+  </div>
+
+  <div class = newDiv></div>
+
+  <div class = credits>
+    <h2>Credits</h2>
+      <a href="https://www.pexels.com/photo/black-stone-2363901/">Rock photo</a>
+      <a href="https://www.pexels.com/photo/wrinkly-white-paper-10526896/">Paper photo</a>
+      <a href="https://www.pexels.com/photo/scissors-with-black-handle-8125680/">Scissors photo</a>
   </div>
 </body>
 

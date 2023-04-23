@@ -14,56 +14,56 @@ function playRound(playerSelection, computerSelection) {
   switch (true) {
     case playerSelection === 'rock' && computerSelection === 'Paper':
       div.textContent = 'You lost! Paper beats rock!';
-      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return compWin = true;
 
     case playerSelection === 'rock' && computerSelection === 'Rock':
       div.textContent = 'Draw! You both picked rock!';
-      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return bothTie = true;
   
     case playerSelection === 'rock' && computerSelection === 'Scissors':
       div.textContent = 'You won! Rock beats scissors!';
-      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return playerWin = true;
 
     case playerSelection === 'paper' && computerSelection === 'Paper':
       div.textContent = 'Draw! You both picked paper!';
-      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return bothTie = true;
 
     case playerSelection === 'paper' && computerSelection === 'Rock':
       div.textContent = 'You won! Paper beats rock!';
-      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return playerWin = true;
 
     case playerSelection === 'paper' && computerSelection === 'Scissors':
       div.textContent = 'You lost! Scissors beats paper!';
-      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return compWin = true;
       
     case playerSelection === 'scissors' && computerSelection === 'Paper':
       div.textContent = 'You won! Scissors beats paper!';
-      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return playerWin = true;
 
     case playerSelection === 'scissors' && computerSelection === 'Rock':
       div.textContent = 'You lost! Rock beats scissors!';
-      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return compWin = true;
 
     case playerSelection === 'scissors' && computerSelection === 'Scissors':
       div.textContent = 'Draw! You both picked scissors!';
-      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
-      container.appendChild(div);
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px; width: 35%; height: 100px; display: flex; justify-content: center; align-items: center; margin: 20px;';
+      newDiv.appendChild(div);
       return bothTie = true;
   }
 }
@@ -101,7 +101,7 @@ function game() {
   }
 }
 
-const container = document.querySelector('.container');
+const newDiv = document.querySelector('.newDiv');
 const rock = document.querySelector('#Rock');
 const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');

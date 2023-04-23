@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-text {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 40px;
+  width: 170px;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
+
+.newDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  margin-top: auto;
+}
+
+a {
+  margin: 5px;
+  font-size: 20px;
+}
