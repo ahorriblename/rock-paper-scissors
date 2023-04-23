@@ -13,40 +13,58 @@ function playRound(playerSelection, computerSelection) {
 
   switch (true) {
     case playerSelection === 'rock' && computerSelection === 'Paper':
-      console.log( 'You lost! Paper beats rock!');
-      return compWin = true
+      div.textContent = 'You lost! Paper beats rock!';
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return compWin = true;
 
     case playerSelection === 'rock' && computerSelection === 'Rock':
-      console.log( 'Draw! You both picked rock!');
-      return bothTie = true
+      div.textContent = 'Draw! You both picked rock!';
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return bothTie = true;
   
     case playerSelection === 'rock' && computerSelection === 'Scissors':
-      console.log( 'You won! Rock beats scissors!');
-      return playerWin = true
+      div.textContent = 'You won! Rock beats scissors!';
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return playerWin = true;
 
     case playerSelection === 'paper' && computerSelection === 'Paper':
-      console.log( 'Draw! You both picked paper!');
-      return bothTie = true
+      div.textContent = 'Draw! You both picked paper!';
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return bothTie = true;
 
     case playerSelection === 'paper' && computerSelection === 'Rock':
-      console.log( 'You won! Paper beats rock!');
-      return playerWin = true
+      div.textContent = 'You won! Paper beats rock!';
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return playerWin = true;
 
     case playerSelection === 'paper' && computerSelection === 'Scissors':
-      console.log( 'You lost! Scissors beats paper!');
-      return compWin = true
+      div.textContent = 'You lost! Scissors beats paper!';
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return compWin = true;
       
     case playerSelection === 'scissors' && computerSelection === 'Paper':
-      console.log( 'You won! Scissors beats paper!');
-      return playerWin = true
+      div.textContent = 'You won! Scissors beats paper!';
+      div.style.cssText = 'background-color: green; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return playerWin = true;
 
     case playerSelection === 'scissors' && computerSelection === 'Rock':
-      console.log( 'You lost! Rock beats scissors!');
-      return compWin = true
+      div.textContent = 'You lost! Rock beats scissors!';
+      div.style.cssText = 'background-color: red; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return compWin = true;
 
     case playerSelection === 'scissors' && computerSelection === 'Scissors':
-      console.log( 'Draw! You both picked scissors!');
-      return bothTie = true
+      div.textContent = 'Draw! You both picked scissors!';
+      div.style.cssText = 'background-color: grey; border: 2px black solid; font-size: 40px;';
+      container.appendChild(div);
+      return bothTie = true;
   }
 }
 
@@ -83,9 +101,13 @@ function game() {
   }
 }
 
+const container = document.querySelector('.container');
 const rock = document.querySelector('#Rock');
 const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');
+
 rock.addEventListener('click', () => playRound('rock'));
 paper.addEventListener('click', () => playRound('paper'));
 scissors.addEventListener('click', () => playRound('scissors'));
+
+const div = document.createElement('div');
