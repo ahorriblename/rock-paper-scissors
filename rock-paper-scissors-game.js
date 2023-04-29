@@ -79,6 +79,8 @@ function game(choice) {
 
     roundNumber += 1;
 
+    roundText.textContent = 'Round Number: ' + roundNumber;
+
     if (playerWin === true) {
       playerScores += 1
       playerScore.textContent = 'Player Score: ' + playerScores;
@@ -97,8 +99,9 @@ function game(choice) {
       roundNumber = 0;
       playerScore.textContent = 'Player Score: 0' ;
       computerScore.textContent = 'Computer Score: 0';
-      newScoreDiv.textContent = 'Round Reset!'
-      scoreDiv.appendChild(newScoreDiv);
+      roundText.textContent = 'Round Number: 0';
+      newRoundDiv.textContent = 'Round Reset!';
+      roundsDiv.appendChild(newRoundDiv);
     };
   };
 
@@ -109,11 +112,12 @@ const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');
 const computerScore = document.querySelector('#computer');
 const playerScore = document.querySelector('#player');
-const scoreDiv = document.querySelector('.score');
+const roundsDiv = document.querySelector('.rounds');
+const roundText = document.querySelector('.round-text');
 
 rock.addEventListener('click', () => game('rock'));
 paper.addEventListener('click', () => game('paper'));
 scissors.addEventListener('click', () => game('scissors'));
 
 const div = document.createElement('div');
-const newScoreDiv = document.createElement('div');
+const newRoundDiv = document.createElement('div');
