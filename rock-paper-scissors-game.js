@@ -1,17 +1,27 @@
-function getComputerChoice() {
-  let choices = ['Rock', 'Paper', 'Scissors'];
-  let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-  return computerChoice
-}
+let roundNumber = 0;
+
+let playerScores = 0;
+let compScore = 0;
 
 let playerWin = false
 let compWin = false
 let bothTie = false
 
-let playerScores = 0;
-let compScore = 0;
+const newDiv = document.querySelector('.newDiv');
+const rock = document.querySelector('#Rock');
+const paper = document.querySelector('#Paper');
+const scissors = document.querySelector('#Scissors');
+const computerScore = document.querySelector('#computer');
+const playerScore = document.querySelector('#player');
+const roundsDiv = document.querySelector('.rounds');
+const roundText = document.querySelector('.round-text');
 
-let roundNumber = 0;
+rock.addEventListener('click', () => playGame('rock'));
+paper.addEventListener('click', () => playGame('paper'));
+scissors.addEventListener('click', () => playGame('scissors'));
+
+const div = document.createElement('div');
+const newRoundDiv = document.createElement('div');
 
 function playRound(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
@@ -73,12 +83,35 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game(choice) {
+function playGame(choice) {
   playRound(choice);
   newRoundDiv.textContent = '';
+  getRoundNumber();
+  updateScores();
+
+  compWin = false;
+  playerWin = false;
+  bothTie = false;
+
+  if (roundNumber >= 5) {
+    createEndMessage();
+    resetRounds();
+  };
+};
+
+function getComputerChoice() {
+  let choices = ['Rock', 'Paper', 'Scissors'];
+  let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  return computerChoice
+}
+
+function getRoundNumber() {
   roundNumber += 1;
   roundText.textContent = 'Round Number: ' + roundNumber;
+  return roundNumber;
+};
 
+function updateScores() {
   if (playerWin === true) {
     playerScores += 1;
     playerScore.textContent = 'Player Score: ' + playerScores;
@@ -86,25 +119,9 @@ function game(choice) {
     compScore += 1;
     computerScore.textContent = 'Computer Score: ' + compScore;
   };
+};
 
-    compWin = false;
-    playerWin = false;
-    bothTie = false;
-
-    if (roundNumber >= 5) {
-      checkScore();
-      playerScores = 0;
-      compScore = 0;
-      roundNumber = 0;
-      playerScore.textContent = 'Player Score: 0' ;
-      computerScore.textContent = 'Computer Score: 0';
-      roundText.textContent = 'Round Number: 0';
-      newRoundDiv.textContent = 'Game Reset!';
-      roundsDiv.appendChild(newRoundDiv);
-    };
-  };
-
-function checkScore() {
+function createEndMessage() {
   if (playerScores < compScore) {
     div.textContent = 'You lost the game! Better luck next time!';
     div.style.background = 'red';
@@ -117,18 +134,13 @@ function checkScore() {
   };
 };
 
-const newDiv = document.querySelector('.newDiv');
-const rock = document.querySelector('#Rock');
-const paper = document.querySelector('#Paper');
-const scissors = document.querySelector('#Scissors');
-const computerScore = document.querySelector('#computer');
-const playerScore = document.querySelector('#player');
-const roundsDiv = document.querySelector('.rounds');
-const roundText = document.querySelector('.round-text');
-
-rock.addEventListener('click', () => game('rock'));
-paper.addEventListener('click', () => game('paper'));
-scissors.addEventListener('click', () => game('scissors'));
-
-const div = document.createElement('div');
-const newRoundDiv = document.createElement('div');
+function resetRounds() {
+  playerScores = 0;
+  compScore = 0;
+  roundNumber = 0;
+  playerScore.textContent = 'Player Score: 0' ;
+  computerScore.textContent = 'Computer Score: 0';
+  roundText.textContent = 'Round Number: 0';
+  newRoundDiv.textContent = 'Game Reset!';
+  roundsDiv.appendChild(newRoundDiv);
+};
