@@ -74,37 +74,48 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(choice) {
+  playRound(choice);
+  newRoundDiv.textContent = '';
+  roundNumber += 1;
+  roundText.textContent = 'Round Number: ' + roundNumber;
 
-    playRound(choice);
-
-    roundNumber += 1;
-
-    roundText.textContent = 'Round Number: ' + roundNumber;
-
-    if (playerWin === true) {
-      playerScores += 1
-      playerScore.textContent = 'Player Score: ' + playerScores;
-    } else if (compWin === true) {
-      compScore += 1;
-      computerScore.textContent = 'Computer Score: ' + compScore;
-    };
+  if (playerWin === true) {
+    playerScores += 1;
+    playerScore.textContent = 'Player Score: ' + playerScores;
+  } else if (compWin === true) {
+    compScore += 1;
+    computerScore.textContent = 'Computer Score: ' + compScore;
+  };
 
     compWin = false;
     playerWin = false;
     bothTie = false;
 
     if (roundNumber >= 5) {
+      checkScore();
       playerScores = 0;
       compScore = 0;
       roundNumber = 0;
       playerScore.textContent = 'Player Score: 0' ;
       computerScore.textContent = 'Computer Score: 0';
       roundText.textContent = 'Round Number: 0';
-      newRoundDiv.textContent = 'Round Reset!';
+      newRoundDiv.textContent = 'Game Reset!';
       roundsDiv.appendChild(newRoundDiv);
     };
   };
 
+function checkScore() {
+  if (playerScores < compScore) {
+    div.textContent = 'You lost the game! Better luck next time!';
+    div.style.background = 'red';
+  } else if (playerScores > compScore) {
+    div.textContent = 'You won the game! You beat the computer!';
+    div.style.background = 'green';
+  } else {
+    div.textContent = 'Draw! Nobody won, try again next time!';
+    div.style.background = 'grey';
+  };
+};
 
 const newDiv = document.querySelector('.newDiv');
 const rock = document.querySelector('#Rock');
